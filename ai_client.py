@@ -1,12 +1,9 @@
 from openai import OpenAI
-import os
-from dotenv import load_dotenv
-
-load_dotenv()
+from config import OPENROUTER_API_KEY
 
 client = OpenAI(
     base_url="https://openrouter.ai/api/v1",
-    api_key=os.getenv("OPENROUTER_API_KEY"),
+    api_key=OPENROUTER_API_KEY,
 )
 
 def get_ai_review(prompt: str, model: str = "anthropic/claude-3.5-sonnet"):
