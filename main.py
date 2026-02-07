@@ -14,6 +14,8 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+app.include_router(auth_router, prefix="/api/auth", tags=["auth"])
+
 @app.get("/")
 def root():
     return {"message": "AI Git Reviewer API"}
