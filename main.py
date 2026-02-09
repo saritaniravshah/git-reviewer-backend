@@ -5,6 +5,7 @@ from sqlalchemy.exc import SQLAlchemyError
 from database import engine, Base
 from routes.auth import router as auth_router
 from routes.github import router as github_router
+from socket_manager import socket_app
 from error_handler import (
     AppException,
     app_exception_handler,
@@ -32,6 +33,8 @@ app.add_middleware(
 
 app.include_router(auth_router, prefix="/api/auth", tags=["auth"])
 app.include_router(github_router, prefix="/api/github", tags=["github"])
+
+app.mount("/socket.io", socket_app)
 
 @app.get("/")
 def root():

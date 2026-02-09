@@ -15,3 +15,5 @@ GITHUB_REDIRECT_URI = os.getenv("GITHUB_REDIRECT_URI")
 JWT_SECRET = os.getenv("JWT_SECRET")
 JWT_ALGORITHM = os.getenv("JWT_ALGORITHM", "HS256")
 JWT_EXPIRATION_HOURS = int(os.getenv("JWT_EXPIRATION_HOURS", 24))
+
+REDIS_URL = os.getenv("REDIS_URL", "redis://localhost:6379/0")

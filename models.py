@@ -24,6 +24,7 @@ class Review(Base):
     user_id = Column(Integer, ForeignKey("users.id"), nullable=False)
     repo_url = Column(String, index=True)
     commit_hash = Column(String)
+    status = Column(String, default="pending")
     review_content = Column(Text)
     created_at = Column(DateTime, default=datetime.utcnow)
     

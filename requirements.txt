@@ -8,3 +8,6 @@ python-dotenv==1.0.0
 openai==1.10.0
 pyjwt==2.8.0
 httpx==0.26.0
+celery==5.3.6
+redis==5.0.1
+python-socketio==5.11.0

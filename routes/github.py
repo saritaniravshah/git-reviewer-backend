@@ -61,5 +61,5 @@ async def create_review(
     db: Session = Depends(get_db)
 ):
     review_service = ReviewService(current_user, db)
-    result = await review_service.review_repository(request.repo_url)
+    result = await review_service.start_review(request.repo_url)
     return result
