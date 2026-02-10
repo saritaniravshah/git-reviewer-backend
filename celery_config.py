@@ -4,7 +4,8 @@ from config import REDIS_URL
 celery_app = Celery(
     "git_reviewer",
     broker=REDIS_URL,
-    backend=REDIS_URL
+    backend=REDIS_URL,
+    include=['tasks']
 )
 
 celery_app.conf.update(
