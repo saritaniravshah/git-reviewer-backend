@@ -1,13 +1,13 @@
 from openai import OpenAI
-from config import OPENROUTER_API_KEY
+from config import GROQ_API_KEY
 import json
 
 client = OpenAI(
-    base_url="https://openrouter.ai/api/v1",
-    api_key=OPENROUTER_API_KEY,
+    base_url="https://api.groq.com/openai/v1",
+    api_key=GROQ_API_KEY,
 )
 
-def get_ai_review(prompt: str, model: str = "qwen/qwen3-next-80b-a3b-instruct:free"):
+def get_ai_review(prompt: str, model: str = "llama-3.3-70b-versatile"):
     response = client.chat.completions.create(
         model=model,
         messages=[{"role": "user", "content": prompt}],
