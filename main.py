@@ -6,6 +6,7 @@ from database import engine, Base
 from routes.auth import router as auth_router
 from routes.github import router as github_router
 from routes.user import router as user_router
+from routes.review import router as review_router
 from socket_manager import socket_app
 from error_handler import (
     AppException,
@@ -35,6 +36,7 @@ app.add_middleware(
 app.include_router(auth_router, prefix="/api/auth", tags=["auth"])
 app.include_router(github_router, prefix="/api/github", tags=["github"])
 app.include_router(user_router, prefix="/api/user", tags=["user"])
+app.include_router(review_router, prefix="/api/review", tags=["review"])
 
 app.mount("/socket.io", socket_app)
 

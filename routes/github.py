@@ -39,6 +39,7 @@ async def list_repos(current_user: User = Depends(get_current_user)):
             raise AppException("Failed to fetch repositories", response.status_code)
         
         repos = response.json()
+        # socket
         return {
             "repos": [
                 {
